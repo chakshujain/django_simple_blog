@@ -1,0 +1,40 @@
+{% extends "posts/base.html" %}
+{% block body %}
+<h1>My Blog Posts</h1>
+<style>
+  h1{
+    color : red;
+  }
+  small{
+    color : blue;
+  }
+
+
+</style>
+<button style= margin-left:700px;><a href="create/">Create</a></button>
+
+<hr>
+
+{% for post in posts %}
+<div class="row">
+    <a href="{{post.get_absolute_url}}"><img src="{{post.image.url}}" alt=""></a>
+</div>
+<div class="row">
+<h2><a href="{{post.get_absolute_url}}">{{post.title}}</a>
+
+<small>  written by {{post.author}}</small></h2>
+</div>
+  <div class="row">
+    {{post.description}}
+
+  </div>
+  <hr>
+
+
+
+
+
+{% endfor %}
+
+
+{% endblock %}

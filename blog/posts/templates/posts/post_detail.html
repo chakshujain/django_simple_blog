@@ -1,0 +1,10 @@
+{% extends "posts/base.html" %}
+{% block body %}
+<h1>{{post.title}}</h1>
+<h2>{{post.description}}</h2>
+<h3><img src="{{post.image.url}}" alt=""></h3>
+
+<a href="/">Go Back</a>
+<button> <a href="{{post.get_update_url}}">Update</a></button>
+<button> <a href="{{post.get_delete_url}}">Delete</a></button>
+{% endblock %}
